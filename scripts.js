@@ -24,7 +24,7 @@ const people = [
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
 const filterYear = inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600)
-console.log(filterYear);
+console.table(filterYear);
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
@@ -36,22 +36,49 @@ console.log(fullName);
 const birthdate = inventors.sort(function(a, b) {
     return a.year-b.year
 })
-console.log(birthdate);
+console.table(birthdate);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?x
-const yearSum = inventors.reduce((accumulator, currentValue) => accumulator + currentValue.year, 0)
+const yearSum = inventors.reduce((total, inventor) => total + (inventor.passed - inventor.year), 0)
 console.log(yearSum);
 
 // 5. Sort the inventors by years lived
+const oldest = inventors.sort(function(a, b) {
+    const lastGuy = a.passed - a.year;
+    const nextGuy = b.passed - b.year;
+    return lastGuy > nextGuy ? -1 : 1;
+});
+console.table(oldest);
 
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+//https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+// const category = document.querySelector('.mw-category');
+// const links = [...category.querySelectorAll('a')];
+// const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'));
 
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+const alpha = people.sort((lastName, firstName) => {
+    const [aLast, aFirst] = lastName.split(', ');
+    const [bLast, bFirst] = firstName.split(', ');
+    return aLast > bLast ? 1:-1;
+});
+console.log(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
+const countedNames = people.reduce((allNames, name) => {
+    if (name in allNames) {
+        allNames[name]++
+    } 
+    else {
+        allNames[name] = 1
+    }
+    return allNames
+}, {})
+console.table(countedNames);
+
 const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
