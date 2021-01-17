@@ -1,0 +1,24 @@
+{
+  "name": "arraycardiodayone",
+  "version": "1.0.0",
+  "description": "A javascript practice to create and add objects to an array using vanilla js",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "lite-server": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daveyloder/arraycardiodayone.git"
+  },
+  "author": "David Loder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daveyloder/arraycardiodayone/issues"
+  },
+  "homepage": "https://github.com/daveyloder/arraycardiodayone#readme"
+}
