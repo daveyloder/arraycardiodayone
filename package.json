@@ -4,14 +4,19 @@
   "description": "A javascript practice to create and add objects to an array using vanilla js",
   "main": "index.html",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta1"
+    "bootstrap": "^5.0.0-beta1",
+    "rimraf": "^3.0.2",
+    "usemin-cli": "^0.6.0"
   },
   "devDependencies": {
     "lite-server": "^2.6.1"
   },
   "scripts": {
-    "start":"npm run lite",
-    "lite":"lite-server",
+    "build": "npm run clean && npm run usemin",
+    "clean": "rimraf dist",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
+    "start": "npm run lite",
+    "lite": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

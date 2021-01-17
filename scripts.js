@@ -70,7 +70,9 @@ console.log(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
-const countedNames = people.reduce((allNames, name) => {
+const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+
+const countedNames = data.reduce((allNames, name) => {
     if (name in allNames) {
         allNames[name]++
     } 
@@ -80,5 +82,3 @@ const countedNames = people.reduce((allNames, name) => {
     return allNames
 }, {})
 console.table(countedNames);
-
-const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
