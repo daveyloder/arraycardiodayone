@@ -14,7 +14,7 @@
   "scripts": {
     "build": "npm run clean && npm run usemin",
     "clean": "rimraf dist",
-    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
+    "usemin": "usemin index.html -d dist  -o dist/index.html --htmlmin true",
     "start": "npm run lite",
     "lite": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
